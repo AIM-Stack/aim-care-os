@@ -1,12 +1,20 @@
 from fastapi import FastAPI
 
 app = FastAPI(
-    title=\"AIM Care OS\",
-    version=\"0.1.0\"
+    title="AIM Care OS",
+    version="0.1.0"
 )
 
-@app.get(\"/\")
+
+@app.get("/")
 async def root():
     return {
-        \"message\": \"AIM Care OS API Running\"
+        "message": "AIM Care OS API Running"
+    }
+
+
+@app.get("/health")
+async def health():
+    return {
+        "status": "healthy"
     }
